@@ -42,6 +42,8 @@ if __name__ == "__main__":
             continue
     fam = get_family(pairs)
    # print(fam)
+    if len(values) != n:
+        values = range(1,n+1)
     invalid_pairs = get_combinations(fam)
     total_pairs = set(itertools.combinations(list(values),2))
     male_pair = set(itertools.combinations(males,2))
