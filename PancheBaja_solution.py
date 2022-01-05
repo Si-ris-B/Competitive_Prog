@@ -45,10 +45,11 @@ if __name__ == "__main__":
     if len(values) != n:
         values = range(1,n+1)
     invalid_pairs = get_combinations(fam)
-    total_pairs = set(itertools.combinations(list(values),2))
-    male_pair = set(itertools.combinations(males,2))
-    female_pair = set(itertools.combinations(females,2))
+    total_pairs = set(itertools.combinations(sorted(list(values)),2))
+    male_pair = set(itertools.combinations(sorted(list(males)),2))
+    female_pair = set(itertools.combinations(sorted(list(females)),2))
 
     valid_pairs = total_pairs - invalid_pairs - male_pair - female_pair
+    
 
     print(len(valid_pairs))
