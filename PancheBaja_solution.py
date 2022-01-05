@@ -28,11 +28,14 @@ if __name__ == "__main__":
     pairs = []
     males = []
     females = []
-    for c in range(p):
-        k,l = map(int,input().split())
-        pairs.append((k,l))
-        males.append(k)
-        females.append(l)
+    for c in range(p+1):
+        try:
+            k,l = map(int,input().split())
+            pairs.append((k,l))
+            males.append(k)
+            females.append(l)
+        except:
+            continue
     fam = get_family(pairs)
    # print(fam)
     invalid_pairs = get_combinations(fam)
